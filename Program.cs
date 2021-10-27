@@ -58,6 +58,10 @@ namespace Kordamine
                 Console.WriteLine();
             }
         }
+        static void Muuk_ise()
+        {
+
+        }
         static void Muuk()
         {   Console.WriteLine("Rida:");
             int pileti_rida = int.Parse(Console.ReadLine());
@@ -102,8 +106,11 @@ namespace Kordamine
             while (true)
             {
                 Saal_ekraanile();
-                Muuk();
-                
+                Console.WriteLine("1-ise valik, 2-masina valik");
+                int valik = int.Parse(Console.ReadLine());
+                if (valik==1)
+                { Muuk_ise();}
+                else { Muuk(); }   
             }            
             //Console.ReadLine();
         }
