@@ -62,7 +62,7 @@ namespace Kordamine
         {
             Console.WriteLine("Rida:");
             int pileti_rida = int.Parse(Console.ReadLine());
-            Console.WriteLine("Rida:");
+            Console.WriteLine("Koht:");
             int pileti_koht = int.Parse(Console.ReadLine());
             if (saal[pileti_rida, pileti_koht] ==0)
             {
@@ -127,18 +127,17 @@ namespace Kordamine
                     int koh = 0;
                     Console.WriteLine("Mitu pileteid tahad osta?");
                     int kogus = int.Parse(Console.ReadLine());
-                    for (int i = 0; i < (kohad-1)*(read-1); i++)//kui valime 0-d
+                    bool muuk = true;
+                    while (muuk)
                     {
-                        bool muuk=Muuk_ise();
-                        if (muuk)
+                        for (int i = 0; i < (kohad)*(read); i++)//kui valime 0-d
                         {
-                            koh++;
+                            muuk=Muuk_ise();
+                            if (muuk) {koh++;}
+                            Console.WriteLine("{0}: {1}", kogus,koh);
+                            if (koh == kogus) { break; }
                         }
-                        if (koh==kogus)
-                        {
-                            break;
-                        }
-                    }
+                    } 
                 }
                 else 
                 {
