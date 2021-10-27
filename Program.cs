@@ -71,7 +71,7 @@ namespace Kordamine
             
            
         }
-        static bool  Muuk()
+        static bool Muuk()
         {   Console.WriteLine("Rida:");
             int pileti_rida = int.Parse(Console.ReadLine());
             Console.WriteLine("Mitu piletid:");
@@ -123,9 +123,10 @@ namespace Kordamine
                 { Muuk_ise();}
                 else 
                 {
-                    while (Muuk()!=true)
+                    bool muuk = false;
+                    while (muuk!=true)
                     {
-                        Muuk();
+                        muuk=Muuk();
                     } 
                 }   
             }            
