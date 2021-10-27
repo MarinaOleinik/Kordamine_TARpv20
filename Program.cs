@@ -60,7 +60,16 @@ namespace Kordamine
         }
         static void Muuk_ise()
         {
-
+            Console.WriteLine("Rida:");
+            int pileti_rida = int.Parse(Console.ReadLine());
+            Console.WriteLine("Rida:");
+            int pileti_koht = int.Parse(Console.ReadLine());
+            if (saal[pileti_rida, pileti_koht] ==0)
+            {
+                saal[pileti_rida, pileti_koht] = 1;
+            }
+            
+           
         }
         static void Muuk()
         {   Console.WriteLine("Rida:");
