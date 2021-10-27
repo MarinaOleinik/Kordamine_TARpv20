@@ -71,7 +71,7 @@ namespace Kordamine
             
            
         }
-        static void Muuk()
+        static bool  Muuk()
         {   Console.WriteLine("Rida:");
             int pileti_rida = int.Parse(Console.ReadLine());
             Console.WriteLine("Mitu piletid:");
@@ -92,7 +92,7 @@ namespace Kordamine
                     k = 0;
                     p = (kohad - mitu) / 2;
                     break;}
-                    p=p+1;
+                    p++;
                     k++;
                 } while (mitu!=k);
             if (t==true)
@@ -102,11 +102,13 @@ namespace Kordamine
                 {
                     Console.WriteLine("{0}\n", koh);
                 }
+                
             }
             else
             {
                 Console.WriteLine("Selles reas ei ole vabu kohti. Kas tahad teises reas otsida?");
-            }  
+            }
+            return t;
         }
         public static void Main(string[] args)
         {
@@ -119,7 +121,13 @@ namespace Kordamine
                 int valik = int.Parse(Console.ReadLine());
                 if (valik==1)
                 { Muuk_ise();}
-                else { Muuk(); }   
+                else 
+                {
+                    while (Muuk()!=true)
+                    {
+                        Muuk();
+                    } 
+                }   
             }            
             //Console.ReadLine();
         }
