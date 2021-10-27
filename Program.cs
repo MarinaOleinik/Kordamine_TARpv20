@@ -58,7 +58,7 @@ namespace Kordamine
                 Console.WriteLine();
             }
         }
-        static void Muuk_ise()
+        static bool Muuk_ise()
         {
             Console.WriteLine("Rida:");
             int pileti_rida = int.Parse(Console.ReadLine());
@@ -67,9 +67,12 @@ namespace Kordamine
             if (saal[pileti_rida, pileti_koht] ==0)
             {
                 saal[pileti_rida, pileti_koht] = 1;
+                return true;
             }
-            
-           
+            else
+            {
+                return false;
+            }
         }
         static bool Muuk()
         {   Console.WriteLine("Rida:");
@@ -120,7 +123,23 @@ namespace Kordamine
                 Console.WriteLine("1-ise valik, 2-masina valik");
                 int valik = int.Parse(Console.ReadLine());
                 if (valik==1)
-                { Muuk_ise();}
+                {
+                    int koh = 0;
+                    Console.WriteLine("Mitu pileteid tahad osta?");
+                    int kogus = int.Parse(Console.ReadLine());
+                    for (int i = 0; i < (kohad-1)*(read-1); i++)//kui valime 0-d
+                    {
+                        bool muuk=Muuk_ise();
+                        if (muuk)
+                        {
+                            koh++;
+                        }
+                        if (koh==kogus)
+                        {
+                            break;
+                        }
+                    }
+                }
                 else 
                 {
                     bool muuk = false;
