@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -60,24 +60,28 @@ namespace Kordamine
         }
         static bool Muuk_ise()
         {
-            Console.WriteLine("Rida:");
-            int pileti_rida = int.Parse(Console.ReadLine());
-            Console.WriteLine("Koht:");
-            int pileti_koht = int.Parse(Console.ReadLine());
-            if (saal[pileti_rida, pileti_koht] ==0)
+            Console.Write("Rida: ");
+            int pileti_rida = int.Parse(Console.ReadLine()) - 1;
+            Console.Write("Koht: ");
+            int pileti_koht = int.Parse(Console.ReadLine()) - 1;
+            if (saal[pileti_rida, pileti_koht] == 0)
             {
+                Console.WriteLine("Saal koht: " + saal[pileti_rida, pileti_koht]);
+                Console.WriteLine("Sold.");
                 saal[pileti_rida, pileti_koht] = 1;
                 return true;
             }
             else
             {
+                Console.WriteLine("Saal koht: " + saal[pileti_rida, pileti_koht]);
+                Console.WriteLine("Taken. ");
                 return false;
             }
         }
         static bool Muuk()
-        {   Console.WriteLine("Rida:");
-            int pileti_rida = int.Parse(Console.ReadLine());
-            Console.WriteLine("Mitu piletid:");
+        {   Console.Write("Rida: ");
+            int pileti_rida = int.Parse(Console.ReadLine()) - 1;
+            Console.Write("Mitu piletid: ");
             mitu = int.Parse(Console.ReadLine());
             ost = new int[mitu];
             int p =(kohad-mitu)/2;
@@ -124,31 +128,18 @@ namespace Kordamine
                 int valik = int.Parse(Console.ReadLine());
                 if (valik==1)
                 {
-                    int koh = 0;
                     Console.WriteLine("Mitu pileteid tahad osta?");
                     int kogus = int.Parse(Console.ReadLine());
-                    bool muuk = true;
-                    while (muuk)
+                    while (kogus > 0) 
                     {
-                        for (int i = 0; i < (kohad)*(read); i++)//kui valime 0-d
-                        {
-                            muuk=Muuk_ise();
-                            if (muuk) {koh++;}
-                            Console.WriteLine("{0}: {1}", kogus,koh);
-                            if (koh == kogus) { break; }
-                        }
-                    } 
+                        if (Muuk_ise()) kogus--;
+                    }
                 }
                 else 
                 {
-                    bool muuk = false;
-                    while (muuk!=true)
-                    {
-                        muuk=Muuk();
-                    } 
+                    while (Muuk()) { }
                 }   
             }            
-            //Console.ReadLine();
         }
     }
 }
