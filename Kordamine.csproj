@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Kordamine.Program</StartupObject>
+    <StartupObject>Kordamine.Listid</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>bob.ico</ApplicationIcon>
@@ -68,6 +68,8 @@
     <Compile Include="Alamprogramm.cs" />
     <Compile Include="Kordused.cs" />
     <Compile Include="Korrutustabel.cs" />
+    <Compile Include="Listid.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startclass.cs" />

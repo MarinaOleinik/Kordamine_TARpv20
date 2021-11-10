@@ -124,7 +124,7 @@ namespace Kordamine
                 int valik = int.Parse(Console.ReadLine());
                 if (valik==1)
                 {
-                    int koh = 0;
+                    int koh = 1;
                     Console.WriteLine("Mitu pileteid tahad osta?");
                     int kogus = int.Parse(Console.ReadLine());
                     bool muuk = true;
